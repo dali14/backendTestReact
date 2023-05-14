@@ -1,0 +1,22 @@
+{
+  "name": "express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "hello"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dali14/backendTestReact.git"
+  },
+  "keywords": [
+    "dali"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dali14/backendTestReact/issues"
+  },
+  "homepage": "https://github.com/dali14/backendTestReact#readme"
+}
