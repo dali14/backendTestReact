@@ -1,19 +1,27 @@
 const User = require('../models/User');
+const express = require('express');
+const router = express.Router();
 
 const allUser = (req, res) => {
     User.findAll()
-    .then(users => res.json(users))
+    .then(users => {res.status(200).json(users)})
     .catch(err => res.status(500).json({ error: err.message }));
-  }
+};
 const getUsersByIds = (req, res) => {
+
+    const userId = req.params.id; // Access the user ID from req.params.id
     User.findAll({
-        where: {
-            id: req.params.id
-        }
+      where: {
+        id: userId // Use the userId variable in the query
+      }
     })
-    .then(users => res.json(users))
-    .catch(err => res.status(500).json({ error: err.message }));
-}
+      .then(users => {
+        res.status(200).json(users);
+      })
+      .catch(err => {
+        res.status(500).json({ error: err.message });
+      });
+  };
 const createUser = (req, res) => {
     User.create(req.body)
       .then(user => res.json(user))

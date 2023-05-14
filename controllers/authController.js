@@ -19,4 +19,7 @@ const login = async ({ email, password }) => {
     return { token, user };
     }
 
-module.exports = login;
+    module.exports = {
+
+        login,
+    };
