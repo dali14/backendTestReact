@@ -2,6 +2,12 @@ const { DataTypes } = require('sequelize');
 const sequelize = require('../db');
 
 const User = sequelize.define('User', {
+  id: {
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
+    allowNull: false
+  },
   name: {
     type: DataTypes.STRING,
     allowNull: false
@@ -17,11 +23,11 @@ const User = sequelize.define('User', {
   },
   last_login: {
     type: DataTypes.DATE,
-    allowNull: false
+    allowNull: true
     },
   password: {
     type: DataTypes.STRING,
-    allowNull: false
+    allowNull: true
   },
 }
 , {
@@ -29,7 +35,7 @@ const User = sequelize.define('User', {
     createdAt: 'created_at',
     updatedAt: 'updated_at',
     deletedAt: 'deleted_at',
-    paranoid: true,
+    tableName: 'Users'
 }
 );
 module.exports = User;

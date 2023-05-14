@@ -2,8 +2,8 @@ const User = require('../models/User');
 
 const allUser = (req, res) => {
     User.findAll()
-      .then(users => res.json(users))
-      .catch(err => res.status(500).json({ error: err.message }));
+    .then(users => res.json(users))
+    .catch(err => res.status(500).json({ error: err.message }));
   }
 const getUsersByIds = (req, res) => {
     User.findAll({
@@ -14,8 +14,6 @@ const getUsersByIds = (req, res) => {
     .then(users => res.json(users))
     .catch(err => res.status(500).json({ error: err.message }));
 }
-
-
 const createUser = (req, res) => {
     User.create(req.body)
       .then(user => res.json(user))
@@ -29,7 +27,10 @@ const updateUser = (req, res) => {
     .then(user => res.json(user))
     .catch(err => res.status(500).json({ error: err.message }));
 }
-  module.exports = {
+module.exports = {
+
     allUser,
-    createUser  
-    }
+    createUser,
+    updateUser,
+    getUsersByIds
+};
