@@ -1,1 +1,6 @@
-const REQUIRED_FIELDS = ['email', 'password'];
+
+const login = async ({ email, password }) => {
+}
+module.exports = {
+    login,
+};
